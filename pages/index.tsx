@@ -3,7 +3,14 @@ import { GetStaticProps } from 'next';
 import getAllProducts from '../framework/shopify/product/get-all-products';
 
 const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
-	return <div>{products}</div>;
+	console.log(`products =>`, products);
+	return (
+		<div>
+			{products.map((product) => (
+				<div key={product.id}>{product.title}</div>
+			))}
+		</div>
+	);
 };
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
