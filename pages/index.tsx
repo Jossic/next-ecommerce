@@ -1,4 +1,4 @@
-import getAllProducts from '@shopify/product/get-all-products';
+import getAllProducts from '@framework/product/get-all-products';
 import type { InferGetStaticPropsType, NextPage } from 'next';
 import { GetStaticProps } from 'next';
 
