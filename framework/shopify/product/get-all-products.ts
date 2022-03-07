@@ -1,8 +1,8 @@
-import { fetchAPI } from '../utils/fetch-api';
-import { getAllProductsQuery } from '../utils/queries/get-all-products';
-import { ProductConnection } from '../schema';
-import { normalizeProduct } from '../utils/normalize';
-import { Product } from '../../common/types/product';
+import { Product } from '@common/types/product';
+import { ProductConnection } from '@shopify/schema';
+import { fetchAPI } from '@shopify/utils/fetch-api';
+import { normalizeProduct } from '@shopify/utils/normalize';
+import { getAllProductsQuery } from '@shopify/utils/queries/get-all-products';
 
 type ReturnType = { products: ProductConnection };
 

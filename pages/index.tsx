@@ -1,6 +1,6 @@
+import getAllProducts from '@shopify/product/get-all-products';
 import type { InferGetStaticPropsType, NextPage } from 'next';
 import { GetStaticProps } from 'next';
-import getAllProducts from '../framework/shopify/product/get-all-products';
 
 const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	return (
