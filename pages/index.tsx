@@ -1,3 +1,4 @@
+import { getConfig } from '@framework/api/config';
 import getAllProducts from '@framework/product/get-all-products';
 import type { InferGetStaticPropsType, NextPage } from 'next';
 import { GetStaticProps } from 'next';
@@ -14,7 +15,8 @@ const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
 };
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
-	const products = await getAllProducts();
+	const config = getConfig();
+	const products = await getAllProducts(config);
 
 	return {
 		props: {
