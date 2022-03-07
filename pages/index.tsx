@@ -6,9 +6,10 @@ const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
 	console.log(`products =>`, products);
 	return (
 		<div>
-			{products.map((product) => (
+			{JSON.stringify(products)}
+			{/* {products.map((product) => (
 				<div key={product.id}>{product.title}</div>
-			))}
+			))} */}
 		</div>
 	);
 };
