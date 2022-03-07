@@ -3,8 +3,23 @@ const fs = require('fs');
 const merge = require('deepmerge');
 const prettier = require('prettier');
 
+const ALLOWED_FW = ['shopify', 'shopify_local'];
+const FALLBACK_FW = 'shopify';
+
 const withFramworkConfig = (defaultConfig = {}) => {
-	const framework = defaultConfig?.framework.name;
+	let framework = defaultConfig?.framework?.name;
+
+	if (!framework) {
+		throw new Error('API server is missing');
+	}
+
+	if (!ALLOWED_FW.includes(framework)) {
+		throw new Error("API Framework isn't a good one");
+	}
+
+	if (framework === 'shopify_local') {
+		framework = FALLBACK_FW;
+	}
 
 	const frameworkNextConfig = require(path.join(
 		'../',
