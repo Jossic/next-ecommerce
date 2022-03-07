@@ -1,5 +1,5 @@
 import { Product } from '@common/types/product';
-import { ProductConnection } from '@shopify/schema';
+import { ProductConnection } from '@framework/schema';
 import { fetchAPI, normalizeProduct, getAllProductsQuery } from '../utils';
 
 type ReturnType = { products: ProductConnection };
