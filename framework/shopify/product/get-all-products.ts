@@ -1,8 +1,10 @@
 import { Product } from '@common/types/product';
 import { ProductConnection } from '@shopify/schema';
-import { fetchAPI } from '@shopify/utils/fetch-api';
-import { normalizeProduct } from '@shopify/utils/normalize';
-import { getAllProductsQuery } from '@shopify/utils/queries/get-all-products';
+import {
+	fetchAPI,
+	normalizeProduct,
+	getAllProductsQuery,
+} from '@shopify/utils';
 
 type ReturnType = { products: ProductConnection };
 
