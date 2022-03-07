@@ -1,9 +1,12 @@
+import { Layout } from '@components/common';
 import { getConfig } from '@framework/api/config';
 import getAllProducts from '@framework/product/get-all-products';
 import type { InferGetStaticPropsType, NextPage } from 'next';
 import { GetStaticProps } from 'next';
 
-const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
+export default function Home({
+	products,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
 	return (
 		<div>
 			{JSON.stringify(products)}
@@ -12,7 +15,7 @@ const Home = ({ products }: InferGetStaticPropsType<typeof getStaticProps>) => {
 			))} */}
 		</div>
 	);
-};
+}
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
 	const config = getConfig();
@@ -25,4 +28,4 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 	};
 };
 
-export default Home;
+Home.Layout = Layout;
