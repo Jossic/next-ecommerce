@@ -29,12 +29,15 @@
 }
 
 .productTitle span {
-	@apply py-4 px-6;
+	@apply py-4 px-6 bg-primary;
 	box-decoration-break: clone;
 }
 .productPrice {
-	@apply pb-4 pt-2 px-6 font-semibold text-lg;
+	@apply pb-4 pt-2 px-6 font-semibold text-lg bg-primary;
 	letter-spacing: 0.4px;
+}
+.productImage {
+	@apply transition-transform duration-300 block;
 }
 
 .productBg {
@@ -43,7 +46,7 @@
 }
 
 .productBg::before {
-	@apply block w-full h-full bg-repeat-space;
+	@apply transition-transform duration-300 block w-full h-full bg-repeat-space;
 	content: '';
 	background-image: url('/product-pattern-bg.svg');
 }
