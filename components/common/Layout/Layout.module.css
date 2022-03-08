@@ -1,5 +1,6 @@
 .root {
 	@apply mx-auto h-full;
 	max-width: 2460px;
-	width: 80%;
+	/* width: 80%; */
+	background-color: var(--green);
 }
