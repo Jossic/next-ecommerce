@@ -19,7 +19,9 @@ const ProductCard: FC<Props> = ({ product }) => {
 					<h3 className={s.productTitle}>
 						<span>{product.name}</span>
 					</h3>
-					<span className={s.productPrice}>$4</span>
+					<span className={s.productPrice}>
+						{product.price.totalPrice}
+					</span>
 				</div>
 				{product.images && (
 					<Image
