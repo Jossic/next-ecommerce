@@ -26,7 +26,7 @@ const ProductCard: FC<Props> = ({ product }) => {
 						// objectFit="cover"
 						quality='85'
 						layout='responsive'
-						src={placeholder}
+						src={product.images[0].url ?? placeholder}
 						alt={product.name ?? 'Product image'}
 					/>
 				)}
