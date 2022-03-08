@@ -13,18 +13,26 @@
 }
 
 .root > * {
-	@apply row-span-1;
-	height: 500px;
+	@apply row-span-1 overflow-hidden;
 	max-height: 800px;
 
 	@screen lg {
 		height: inherit;
+		max-height: 100%;
 	}
 }
 
 .layoutA {
 	color: red;
 }
+
+.layoutA > *:nth-child(6n + 1),
+.layoutA > *:nth-child(6n + 5) {
+	@screen lg {
+		@apply col-span-2 row-span-2;
+	}
+}
+
 .layoutB {
 	color: blue;
 }
