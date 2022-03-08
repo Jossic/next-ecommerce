@@ -23,7 +23,7 @@
 }
 
 .layoutA {
-	color: red;
+	/* color: red; */
 }
 
 .layoutA > *:nth-child(6n + 1),
@@ -34,5 +34,5 @@
 }
 
 .layoutB {
-	color: blue;
+	/* color: blue; */
 }
