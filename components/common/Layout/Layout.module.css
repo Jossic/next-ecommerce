@@ -1,6 +1,4 @@
 .root {
-	@apply mx-auto h-full;
+	@apply bg-primary-2 mx-auto h-full;
 	max-width: 2460px;
-	/* width: 80%; */
-	background-color: theme('colors.violet');
 }
