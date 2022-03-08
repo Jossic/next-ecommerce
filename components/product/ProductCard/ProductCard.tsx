@@ -23,6 +23,7 @@ const ProductCard: FC<Props> = ({ product }) => {
 				</div>
 				{product.images && (
 					<Image
+						className={s.productImage}
 						width={540}
 						height={540}
 						// objectFit="cover"

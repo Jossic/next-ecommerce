@@ -1,5 +1,12 @@
 .root {
-	@apply relative;
+	@apply relative max-h-full;
+}
+
+.root:hover .productBg::before {
+	transform: scale(0.98);
+}
+.root:hover .productImage {
+	transform: scale(1.15);
 }
 
 .root:nth-child(6n + 1) .productBg {
