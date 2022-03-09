@@ -1,13 +1,13 @@
 import { FC, ReactNode } from 'react';
 import s from './Container.module.css';
-import Link from 'next/link';
 
 interface Props {
 	children: ReactNode | ReactNode[];
+	element?: any;
 }
 
-const Container: FC<Props> = ({ children }) => {
-	return <div className={s.container}>{children}</div>;
+const Container: FC<Props> = ({ children, element: Component = 'div' }) => {
+	return <Component className={s.container}>{children}</Component>;
 };
 
 export default Container;
