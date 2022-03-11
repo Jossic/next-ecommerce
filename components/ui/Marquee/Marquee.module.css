@@ -1,3 +1,11 @@
 .root {
-	@apply px-14 mx-auto max-w-8xl;
+	height: 320px;
+}
+
+.container {
+	@apply flex flex-row;
+}
+
+.container > * {
+	@apply flex-1 px-16 py-4 relative;
 }
