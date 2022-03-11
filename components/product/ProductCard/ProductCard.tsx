@@ -6,34 +6,42 @@ import s from './ProductCard.module.css';
 
 interface Props {
 	product: Product;
+	variant?: 'simple' | 'slim';
 }
 
 const placeholder = '/product-image-placeholder.svg';
 
-const ProductCard: FC<Props> = ({ product }) => {
+const ProductCard: FC<Props> = ({ product, variant = 'simple' }) => {
 	return (
 		<Link href={`/products/${product.slug}`}>
 			<a className={s.root}>
-				<div className={s.productBg}></div>
-				<div className={s.productTag}>
-					<h3 className={s.productTitle}>
-						<span>{product.name}</span>
-					</h3>
-					<span className={s.productPrice}>
-						{product.price.totalPrice}
-					</span>
-				</div>
-				{product.images && (
-					<Image
-						className={s.productImage}
-						width={540}
-						height={540}
-						// objectFit="cover"
-						quality='85'
-						layout='responsive'
-						src={product.images[0].url ?? placeholder}
-						alt={product.name ?? 'Product image'}
-					/>
+				{variant === 'slim' ? (
+					<>SLIM </>
+				) : (
+					<>
+						{' '}
+						<div className={s.productBg}></div>
+						<div className={s.productTag}>
+							<h3 className={s.productTitle}>
+								<span>{product.name}</span>
+							</h3>
+							<span className={s.productPrice}>
+								{product.price.totalPrice}
+							</span>
+						</div>
+						{product.images && (
+							<Image
+								className={s.productImage}
+								width={540}
+								height={540}
+								// objectFit="cover"
+								quality='85'
+								layout='responsive'
+								src={product.images[0].url ?? placeholder}
+								alt={product.name ?? 'Product image'}
+							/>
+						)}
+					</>
 				)}
 			</a>
 		</Link>
