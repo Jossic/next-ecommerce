@@ -1,5 +1,5 @@
 import '@assets/main.css';
-import { UIProvider } from '@components/ui/context';
+import { UIProvider, useUi } from '@components/ui/context';
 // import '../styles/global.css';
 import type { AppProps } from 'next/app';
 import { FC } from 'react';
@@ -11,6 +11,7 @@ function MyApp({
 	pageProps,
 }: AppProps & { Component: { Layout: FC } }) {
 	const Layout = Component.Layout ?? Noop;
+	const ui = useUi();
 
 	return (
 		<UIProvider>
