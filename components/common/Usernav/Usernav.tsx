@@ -7,12 +7,12 @@ import Heart from '@components/Heart';
 import { useUi } from '@components/ui/context';
 
 const Usernav: FC = () => {
-	const ui = useUi();
+	const { openSidebar } = useUi();
 	return (
 		<nav>
 			<ul className={s.list}>
 				<li className={s.item}>
-					<Bag onClick={ui.setIsSidebarOpen} />
+					<Bag onClick={openSidebar} />
 				</li>
 				<li className={s.item}>
 					<Link href='/wishlist'>
