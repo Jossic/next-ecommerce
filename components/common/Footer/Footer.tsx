@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-const Footer: FC = ({ children }) => {
+const Footer: FC = () => {
 	return (
 		<footer className='bg-black pt-1'>
 			<div className='container mx-auto px-6'>
